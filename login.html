@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PG Finder</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="../index.html">
+            <img src="../assets/images/new/StayJhakkasLogo.png" 
+             alt="StayJhakkas Logo" 
+             style="width: 100px; height: 100px;"/></a>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="rooms.html">PGs</a>
+            <a href="booking.html">Book Now</a>
+            <a href="login.html" class="active">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main>
+        <section class="auth-container">
+            <div class="auth-form" style="margin-top: 20%;">
+                <h2>Login to Your Account</h2>
+                <!-- <form id="loginForm" method="POST" action="login.php"> -->
+                    <form id="loginForm">  
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    </div>
+                    <div class="form-group">
+                        <label for="userType">I am a:</label>
+                        <select id="userType" name="userType" required>
+                            <option value="tenant">Tenant</option>
+                            <option value="owner">PG Owner</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn" style="background-color: lightgreen;">Login</button>
+
+                </form>
+                <div class="social-login">
+                    <div class="social-buttons">
+                        <button class="social-button">
+                            <i class="fab fa-google"></i>
+                            Continue with Google
+                        </button>
+                        <button class="social-button">
+                            <i class="fab fa-facebook-f"></i>
+                            Continue with Facebook
+                        </button>
+                    </div>
+                </div>
+                <p class="auth-link">Don't have an account? <a href="signup.html">Sign Up</a></p>
+                <p class="auth-link">Are you a PG owner? <a href="owner-registration.html">Register your PG</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 StayJhakkas. All rights reserved.</p>
+    </footer>
+    <!-- <script src="../js/auth.js"></script> -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+        
+            const formData = new FormData(this);
+        
+            fetch('login.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                showToast(data.message, data.success);
+                if (data.success) {
+                    setTimeout(() => {
+                        // window.location.href = '../index.html';
+                        window.location.href = 'dashboard.php';
+                    }, 1000); // Optional redirect after showing toast
+                }
+            })
+            .catch(err => {
+                showToast("Invalid credentials.", false);
+                console.error(err);
+            });
+        });
+        </script>
+
+        <div id="toast" style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #333;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        opacity: 0;
+        transition: opacity 0.5s;
+        z-index: 9999;"></div>
+    
+    <script>
+    function showToast(message, isSuccess = true) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.style.backgroundColor = isSuccess ? 'green' : 'crimson';
+        toast.style.opacity = '1';
+        setTimeout(() => toast.style.opacity = '0', 3000);
+    }
+    </script>
+    
+</body>
+</html>

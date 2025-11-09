@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available PGs - PG Finder</title>
+    <style>
+        .book-now-btn {
+            background-color: #ff0000;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .book-now-btn-v {
+            background-color: #ff0000;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .book-now-btn:hover {
+            background-color: #cc0000;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="../index.html">
+            <img src="../assets/images/new/StayJhakkasLogo.png" 
+             alt="StayJhakkas Logo" 
+             style="width: 100px; height: 100px;"/></a>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="rooms.html" class="active">PGs</a>
+            <a href="booking.html">Book Now</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+            <a href="profile.html">My Profile</a>
+            <!-- <form method="POST" action="logout.php" style="display: inline;">
+                <button type="submit" class="btn-logout">Logout</button>
+            </form> -->
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main>
+        <section class="rooms-grid">
+            <div class="room-grid" style="margin-top: 10%; margin-right: ;">
+                <div class="room-card">
+                    <img src="../assets/images/new/6.png" alt="Single Room">
+                    <div class="room-info">
+                        <h3>Vignaharta PG</h3>
+                        <p>Comfortable single occupancy room with basic amenities</p>
+                        <ul class="amenities">
+                            <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
+                            <li><i class="fas fa-utensils"></i> Meals Included</li>
+                            <li><i class="fas fa-broom"></i> Room Cleaning</li>
+                        </ul>
+                        <p class="price">₹6,000/month</p>
+                        <a href="booking.html?type=single" class="book-now-btn">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <img src="../assets/images/new/7.png" alt="Twin Sharing">
+                    <div class="room-info">
+                        <h3>Home Away PG</h3>
+                        <p>Spacious room perfect for sharing with a roommate</p>
+                        <ul class="amenities">
+                            <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
+                            <li><i class="fas fa-utensils"></i> Meals Included</li>
+                            <li><i class="fas fa-couch"></i> Common Area</li>
+                        </ul>
+                        <p class="price">₹4,500/month</p>
+                        <a href="booking.html?type=twin" class="book-now-btn">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <img src="../assets/images/new/8.png" alt="Professional PG">
+                    <div class="room-info">
+                        <h3>Professional PG</h3>
+                        <p>Premium accommodation for working professionals</p>
+                        <ul class="amenities">
+                            <li><i class="fas fa-wifi"></i> High-Speed Wi-Fi</li>
+                            <li><i class="fas fa-utensils"></i> Premium Meals</li>
+                            <li><i class="fas fa-dumbbell"></i> Gym Access</li>
+                        </ul>
+                        <p class="price">₹11,999/month</p>
+                        <a href="booking.html?type=professional" class="book-now-btn">Book Now</a>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <img src="../assets/images/new/9.png" alt="Student PG">
+                    <div class="room-info">
+                        <h3>Student PG</h3>
+                        <p>Affordable accommodation for students</p>
+                        <ul class="amenities">
+                            <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
+                            <li><i class="fas fa-utensils"></i> Meals Included</li>
+                            <li><i class="fas fa-book"></i> Study Room</li>
+                        </ul>
+                        <p class="price">₹5,500/month</p>
+                        <a href="booking.html?type=student" class="book-now-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PG Finder. All rights reserved.</p>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="../js/excel-export.js"></script>
+</body>
+</html>

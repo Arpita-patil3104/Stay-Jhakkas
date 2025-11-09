@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your PG - PG Finder</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="../index.html">
+            <img src="../assets/images/new/StayJhakkasLogo.png" 
+             alt="StayJhakkas Logo" 
+             style="width: 100px; height: 100px;"/></a>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="rooms.html">PGs</a>
+            <a href="booking.html">Book Now</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main>
+        <section class="auth-container">
+            <div class="auth-form owner-registration">
+                <h2>Register Your PG</h2>
+                <p class="subtitle">List your property and reach thousands of potential tenants</p>
+                
+                <form id="ownerRegistrationForm">
+                    <h3>Personal Information</h3>
+                    <div class="form-group">
+                        <label for="ownerName">Full Name</label>
+                        <input type="text" id="ownerName" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="ownerEmail">Email</label>
+                        <input type="email" id="ownerEmail" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="ownerPhone">Phone Number</label>
+                        <input type="tel" id="ownerPhone" required placeholder="Enter your phone number">
+                    </div>
+
+                    <h3>Property Details</h3>
+                    <div class="form-group">
+                        <label for="pgName">PG Name</label>
+                        <input type="text" id="pgName" required placeholder="Enter your PG name">
+                    </div>
+                    <div class="form-group">
+                        <label for="pgAddress">Complete Address</label>
+                        <textarea id="pgAddress" rows="3" required placeholder="Enter complete property address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="pgType">PG Type</label>
+                        <select id="pgType" required>
+                            <option value="">Select PG type</option>
+                            <option value="male">Male Only</option>
+                            <option value="female">Female Only</option>
+                            <option value="coed">Co-ed</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="totalRooms">Total Number of Rooms</label>
+                        <input type="number" id="totalRooms" required min="1">
+                    </div>
+                    <div class="form-group">
+                        <label>Room Types Available</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="roomTypes" value="single">
+                                Single Occupancy
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="roomTypes" value="double">
+                                Double Sharing
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="roomTypes" value="triple">
+                                Triple Sharing
+                            </label>
+                        </div>
+                    </div>
+
+                    <h3>Amenities</h3>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="amenities" value="wifi">
+                                Wi-Fi
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="amenities" value="ac">
+                                Air Conditioning
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="amenities" value="food">
+                                Food Service
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="amenities" value="laundry">
+                                Laundry
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="amenities" value="cleaning">
+                                Room Cleaning
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="amenities" value="parking">
+                                Parking
+                            </label>
+                        </div>
+                    </div>
+
+                    <h3>Property Images</h3>
+                    <div class="form-group">
+                        <label for="propertyImages">Upload Property Images</label>
+                        <input type="file" id="propertyImages" multiple accept="image/*">
+                        <p class="help-text">Upload at least 5 clear images of your property (max 10 images)</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            I confirm that all the information provided is accurate and I agree to the <a href="#">Terms & Conditions</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn">Submit Registration</button>
+                </form>
+
+                <div class="info-box">
+                    <h4>Why List Your PG with Us?</h4>
+                    <ul>
+                        <li><i class="fas fa-users"></i> Reach thousands of verified tenants</li>
+                        <li><i class="fas fa-chart-line"></i> Get more bookings and higher occupancy</li>
+                        <li><i class="fas fa-tools"></i> Easy property management tools</li>
+                        <li><i class="fas fa-headset"></i> 24/7 support for property owners</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PG Finder. All rights reserved.</p>
+    </footer>
+    <script src="../js/auth.js"></script>
+</body>
+</html>
